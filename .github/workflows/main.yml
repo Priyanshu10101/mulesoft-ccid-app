@@ -186,7 +186,7 @@ jobs:
       run: |
         if [ "${{ inputs.environment }}" == "DEV" ];
         then
-          mvn clean deploy -DskipTests -DmuleDeploy -DClientId="$connectedAppId" -DClientSecret="$connectedAppSecret" -DjavaVersion="${{ inputs.java }}" -DGrantType="$grantType" -Denvironment="${{ inputs.environment }}" -D"mule.env"="${{ secrets.dev_mule_env }}" -D"mule.key"="${{ secrets.dev_mule_key }}" -D"application.name"="maven-github-actions-app-dev"
+          mvn clean deploy -DskipTests -DmuleDeploy -DClientId="$connectedAppId" -DClientSecret="$connectedAppSecret" -DjavaVersion="${{ inputs.java }}" -DGrantType="$grantType" -Denvironment="${{ inputs.environment }}" -D"mule.env"="${{ secrets.dev_mule_env }}" -D"mule.key"="${{ secrets.dev_mule_key }}" -D"application.name"="maven-github-actions-app-dev" -X -e
         elif [ "${{ inputs.environment }}" == "UAT" ];
         then
           mvn clean deploy -DskipTests -DmuleDeploy -DClientId="$connectedAppId" -DClientSecret="$connectedAppSecret" -DjavaVersion="${{ inputs.java }}" -DGrantType="$grantType" -Denvironment="${{ inputs.environment }}" -D"mule.env"="${{ secrets.uat_mule_env }}" -D"mule.key"="${{ secrets.uat_mule_key }}" -D"application.name"="maven-github-actions-app-uat"
