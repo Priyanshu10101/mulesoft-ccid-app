@@ -71,12 +71,12 @@ jobs:
           mvn clean test -D"mule.env"="${{ secrets.prod_mule_env }}" -D"mule.key"="${{ secrets.prod_mule_key }}" --settings settings/settings.xml
         fi
     # Upload the MUnit test report to GitHub after the tests are executed
-    - name: "Upload MUnit Report"
-      uses: actions/upload-artifact@v4
-      with:
-        name: "Munit Report"
-        path: target/site/munit/coverage
-        retention-days: 2
+    #- name: "Upload MUnit Report"
+    #  uses: actions/upload-artifact@v4
+    #  with:
+     #   name: "Munit Report"
+     #   path: target/site/munit/coverage
+     #   retention-days: 2
 
   # Build job that runs after tests are completed to build the application
   Build:
